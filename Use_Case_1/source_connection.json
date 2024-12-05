@@ -1,0 +1,16 @@
+{
+    "name": "quickstart-jdbc-source",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+      "tasks.max": 1,
+      "connection.url": "jdbc:mysql://mysql:3306/your-db-name",
+      "connection.user": "your-db-user-name",
+      "connection.password": "your-db-password",
+      "mode": "bulk",
+      "table.whitelist" : "your-db-name.the-table-name-in-source-mysql-db",
+      "error.tolerance": "all",
+      "errors.log.enable" : "true",
+      "topic.prefix": "quickstart-jdbc-",
+      "poll.interval.ms": 1000
+    }
+  } 
