@@ -13,10 +13,15 @@ Choose based on your system requirements. Although, I'd suggest you to select fi
 3. After installing, we have to set some configurations for proper working of Docker in Windows. You can refer [this](https://docs.docker.com/desktop/setup/install/windows-install/#system-requirements) as well.
 
     a. First, type `wsl` in the command prompt to check whether you've wsl available in your system or not.
+
     b. *If its available* it would open bash like interface in your command prompt.
+
     c. *If not*, then install it using `wsl --install`.
+
     d. Then, go to *Settings* and search for **Windows Features** and then make sure that `Virtual Machine Platform` and `Hyper-V` is checked.
+
     e. Lastly, go to *Task Manager* > *Performance Tab* and see whether Virtualization is `Enabled` or not.
+    
     d. *If yes*, then you're good to go. *Otherwise*, you have to go to your BIOS and enable it from there.
 
 That's it! Now you have configured **Docker** on your Windows Machine.
