@@ -5,8 +5,8 @@ services:
     container_name: mysql
     privileged: true
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: kafkaa_test
+      MYSQL_ROOT_PASSWORD: "your-mysql-password"
+      MYSQL_DATABASE: "your-db-name"
     ports:
       - "3307:3306"
 
