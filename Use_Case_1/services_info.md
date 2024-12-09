@@ -77,7 +77,7 @@
     
     `CONTROL_CENTER_GROUP_TOPIC_PARTITIONS`: Sets the partition count for the group topics (used for tracking consumer group statuses).
     
-    `CONTROL_CENTER_INTERNAL_TOPIC_REPLICATION`: Specifies the replication factor for internal topics (set to 1 for simplicity, typically higher in production).
+    `CONTROL_CENTER_INTERNAL_TOPIC_REPLICATION`: Specifies the replication factor for internal topics (set to 1 for simplicity).
     
     `CONTROL_CENTER_COMMAND_TOPIC_REPLICATION`: Sets the replication factor for command topics used by Control Center.
     
