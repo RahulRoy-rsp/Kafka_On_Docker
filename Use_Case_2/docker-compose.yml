@@ -1,0 +1,87 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    privileged: true
+    environment:
+      MYSQL_ROOT_PASSWORD: "your-mysql-password"
+      MYSQL_DATABASE: "your-db-name"
+    ports:
+      - "3307:3306"
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.0.0
+    container_name: zookeeper
+    privileged: true
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:5.0.0
+    container_name: kafka
+    ports:
+      - 9092:9092
+    links:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  kafka-connector-mysql:
+    image: confluentinc/cp-kafka-connect:latest
+    container_name: mysql-connector
+    ports:
+      - 8083:8083
+    links:
+      - kafka
+      - zookeeper
+      - mysql
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: kafka:9092
+      CONNECT_REST_PORT: 8083
+      CONNECT_GROUP_ID: "quickstart-avro"
+      CONNECT_CONFIG_STORAGE_TOPIC: "quickstart-avro-config"
+      CONNECT_OFFSET_STORAGE_TOPIC: "quickstart-avro-offsets"
+      CONNECT_STATUS_STORAGE_TOPIC: "quickstart-avro-status" 
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_REST_ADVERTISED_HOST_NAME: "localhost"
+      CONNECT_LOG4J_ROOT_LOGLEVEL: DEBUG
+      CONNECT_PLUGIN_PATH: "/etc/kafka-connect/jars"
+      CONNECT_PRODUCER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor"
+      CONNECT_CONSUMER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor"
+    volumes:
+      - ./jars:/etc/kafka-connect/jars
+
+  control-center:
+    image: confluentinc/cp-enterprise-control-center:5.0.0
+    container_name: control_center
+    ports:
+      - 9021:9021
+    links:
+      - zookeeper
+      - kafka
+    environment:
+      CONTROL_CENTER_BOOTSTRAP_SERVERS: kafka:9092
+      CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONTROL_CENTER_CONNECT_CLUSTER: kafka-connector-mysql
+      CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
+      CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
+      CONTROL_CENTER_GROUP_TOPIC_PARTITIONS: 1
+      CONTROL_CENTER_INTERNAL_TOPIC_REPLICATION: 1
+      CONTROL_CENTER_COMMAND_TOPIC_REPLICATION: 1
+      CONTROL_CENTER_CONTROL_TOPIC_REPLICATION: 1
+      CONTROL_CENTER_SAFETY_VALVE_TOPIC_REPLICATION: 1
+      CONTROL_CENTER_ZOOKEEPER_TIMEOUT_MS: 10000
+      CONTROL_CENTER_ZOOKEEPER_CONNECT_TIMEOUT_MS: 10000
+      CONTROL_CENTER_REPLICATION_FACTOR: 1

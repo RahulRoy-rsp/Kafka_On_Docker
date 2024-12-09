@@ -1,0 +1,21 @@
+{
+    "name": "quickstart-jdbc-sink",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "connection.url": "jdbc:mysql://mysql:3306/your-db-name",
+      "connection.user": "your-db-user-name",
+      "connection.password": "your-db-password",
+      "topics": "the-topic-name-of-source-connector",
+      "insert.mode": "upsert",
+      "auto.create": "false",
+      "auto.evolve": "true",
+      "batch.size": "1000",
+      "max.retries": "10",
+      "retry.backoff.ms": "5000",
+      "key.ignore": "true",
+      "table.name.format": "the-table-name-in-destination-mysql-db",
+      "pk.mode": "record_value",
+      "pk.fields": "the-primary-key-for-upserting"
+    }
+  }
