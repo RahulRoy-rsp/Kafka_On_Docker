@@ -16,7 +16,7 @@ This folder explains how you can implement a bulk transfer from a MySql database
 1. Make sure you have configured docker properly.
 
 2. **Creating docker-compose file**
-    - [Refer this file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_1/docker-compoese.yml) to understand which services I've used for this use case.
+    - [Refer this file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_1/docker-compose.yml) to understand which services I've used for this use case.
 
 3. Now, that you've configured everything that we need for this use-case, it's time to start the container.
     - Run `docker-compose up -d` command in the terminal.
