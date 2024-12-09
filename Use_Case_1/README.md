@@ -112,7 +112,7 @@ This folder explains how you can implement a bulk transfer from a MySql database
     }
     ```
 
-13. Create desination table, follow the same steps to enter mysql prompt.
+13. Create destination table, follow the same steps to enter mysql prompt.
     - **Creating Sink Table**
     ```sql
     CREATE TABLE sink_table (
