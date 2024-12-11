@@ -133,6 +133,6 @@ This folder explains how you can implement a incremental load from a MySql datab
 
     - ```sql
       INSERT INTO source_table (id, name, role) VALUES (1, 'Jack', 'All-rounder');
-    ```
+        ```
 
 **NOTE**: Make sure you have [jars](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/jars) folder present in your working directory
