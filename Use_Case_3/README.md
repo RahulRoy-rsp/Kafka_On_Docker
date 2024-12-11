@@ -29,19 +29,19 @@ This folder explains how you can implement a simple CDC using kafka.
     - Run `docker-compose up -d` command in the terminal.
     - The above command will start the container with all the images as mentioned in the `docker-compose` file.
     - Verify whether the container has started running (*under container tab*) by opening the Docker Desktop Application.
-    - ![You can see the below output](images/cdc_container_up.png).
+    - ![You can see the below output](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc_container_up.png).
     - Alternatively, you can run `docker ps` to see the containers status.
 
 4. Creating source json file
     - Create a json file which will have the configurations related to the postgres. [Refer this](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/debezium_source.json).
 
 5. Now, as all the services are active, **Sign in to PGadmin**.
-    - ![Container kaf-pg-cdc](images/cdc-container.png)
+    - ![Container kaf-pg-cdc](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc-container.png)
     - As you can see the link for pgadmin, visit that page and it will ask you to sign in to the account.
-    - ![Sign up pgadmin](images/pgadmin_signup.png)
+    - ![Sign up pgadmin](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/pgadmin_signup.png)
     - Use the credentials you entered in the [`docker-compose`](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/docker-compose.yml) file.
     - Once signed in, right click on the *Server* and *Register* and then *Server*
-    ![register](images/pg_register.png)
+    ![register](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/pg_register.png)
     - Enter a unique Server name.
     - Enter the correct *hostname, database name, user and password* as you mentioned in the [`docker-compose`](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/docker-compose.yml) file.
 
@@ -93,19 +93,19 @@ This folder explains how you can implement a simple CDC using kafka.
 
 13. See the output for the three tables.
     - For `player_history`
-    ![player_history-1](images/player_history-1.png)
+    ![player_history-1](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/player_history-1.png)
 
     - For `goal_history`
-    ![goal_history-1](images/goal_history-1.png)
+    ![goal_history-1](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/goal_history-1.png)
 
     - For `points_table` (No update to see, because CDC was not set for this table)
-    ![points_table-1](images/points_table-1.png)
+    ![points_table-1](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/points_table-1.png)
 
 14. Now, lets update records in the tables wherein CDC is active. [Refer this for SQL](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/queries.sql).
 
 15. See the updated output for the two tables.
     - For `player_history`
-    ![player_history-2](images/player_history-2.png)
+    ![player_history-2](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/player_history-2.png)
 
     - For `goal_history`
-    ![goal_history-2](images/goal_history-2.png)
+    ![goal_history-2](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/goal_history-2.png)
