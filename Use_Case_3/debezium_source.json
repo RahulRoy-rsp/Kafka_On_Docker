@@ -1,0 +1,14 @@
+{
+    "name": "exampledb-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "plugin.name": "pgoutput",
+        "database.hostname": "the-hostname-for-postgres-server",
+        "database.port": "5432",
+        "database.user": "the-user-for-postgres-server",
+        "database.password": "the-password-for-postgres-server",
+        "database.dbname": "the-database-name-for-postgres-server",
+        "database.server.name": "the-server-name-for-postgres-server",
+        "table.include.list": "the-table-names-separated-by-commas-if-multiple-used-for-cdc"
+    }
+}
