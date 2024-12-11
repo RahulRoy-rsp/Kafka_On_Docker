@@ -62,3 +62,9 @@ You can also see the images you've pulled from your     `docker-compose` file in
 5. Above are the necessary steps to do for starting the container and the services in it. Then, based on the other requirement you can proceed further.
 
 ---
+
+## Practical Implementation
+
+1. **[Bulk Transfer from MySql to MySql](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_1)** *(mode=bulk)*
+2. **[Incremental Transfer from MySql to MySql](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_2)** *(mode=incrementing)*
+3. **[CDC using Debezium](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_2)** *(capturing from postgres)*
