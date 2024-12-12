@@ -1,4 +1,4 @@
-#### What is Apache Kafka?
+# What is Apache Kafka?
 - **Apache Kafka** is a powerful, distributed streaming platform that’s widely used for building real-time data pipelines and applications.
 - Lets understand it by some simple stories.
     - [The Legend of the Data Stream Kingdom](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/story1.md)
