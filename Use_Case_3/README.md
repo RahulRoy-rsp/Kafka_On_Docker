@@ -28,15 +28,15 @@ This folder explains how you can implement a simple CDC using kafka.
 3. Now that you've configured all the services in the `docker-compose` file, it's time to start the container so that all the services will be online. 
     - Run `docker-compose up -d` command in the terminal.
     - The above command will start the container with all the images as mentioned in the `docker-compose` file.
+    - ![You can see the below output](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc_container_up.png)
     - Verify whether the container has started running (*under container tab*) by opening the Docker Desktop Application.
-    - ![You can see the below output](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc_container_up.png).
+    - ![Container kaf-pg-cdc](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc-container.png)
     - Alternatively, you can run `docker ps` to see the containers status.
 
 4. Creating source json file
     - Create a json file which will have the configurations related to the postgres. [Refer this](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/debezium_source.json).
 
 5. Now, as all the services are active, **Sign in to PGadmin**.
-    - ![Container kaf-pg-cdc](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/cdc-container.png)
     - As you can see the link for pgadmin, visit that page and it will ask you to sign in to the account.
     - ![Sign up pgadmin](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/pgadmin_signup.png)
     - Use the credentials you entered in the [`docker-compose`](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_3/docker-compose.yml) file.
