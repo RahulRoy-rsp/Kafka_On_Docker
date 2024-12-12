@@ -1,3 +1,4 @@
+-- [Step No:- 6]
 -- Creating table player_history (CDC will be UP)
 CREATE TABLE public.player_history (
     player_id integer, signed_date date, team_full_name char(30), team_acr char(5)
@@ -13,6 +14,9 @@ CREATE TABLE public.points_table (
     team_id integer, team_acr char(5), games_won integer, games_lost integer, games_drawn integer 
 );
 
+-- 
+
+-- [Step No:- 7]
 -- Adding logical replication to all the tables
 ALTER TABLE public.player_history REPLICA IDENTITY FULL;
 
@@ -20,7 +24,9 @@ ALTER TABLE public.goal_history REPLICA IDENTITY FULL;
 
 ALTER TABLE public.points_table REPLICA IDENTITY FULL;
 
+-- 
 
+-- [Step No:- 9]
 -- First insert, right after creating the connector
 
 INSERT INTO public.player_history
@@ -35,7 +41,9 @@ INSERT INTO public.points_table
 (team_id, team_acr, games_won, games_lost, games_drawn) 
 VALUES (1, 'MUFC', 2, 1, 2);
 
+-- 
 
+-- [Step No:- 12]
 -- Insert after starting the CDC
 INSERT INTO public.player_history
 (player_id, signed_date, team_full_name, team_acr) 
@@ -49,6 +57,9 @@ INSERT INTO public.points_table
 (team_id, team_acr, games_won, games_lost, games_drawn) 
 VALUES (1, 'PSG', 3, 1, 1);
 
+-- 
+
+-- [Step No:- 14]
 -- updating records in the two tables to capture updates
 UPDATE public.player_history
 SET signed_date = '2006-11-19'
@@ -57,3 +68,5 @@ WHERE player_id = 2;
 UPDATE public.goal_history
 SET opp_team_acr = 'RM'
 WHERE player_id = 2;
+
+-- 
