@@ -1,0 +1,77 @@
+# Source Connector Configurations
+
+- Below are some of the configurations available while creating source connection files.
+- All the configurations may not go well with each other, so based on the requirement, the configurations can be set.
+
+## Configurations
+
+- **name**
+    - Specifies the name for the connector.
+    - Example: `sink_connector`
+---
+- **connector.class** 
+    - The connector class that will be used for the connection. 
+    - Example: `io.confluent.connect.jdbc.JdbcSinkConnector` is used as a JDBC sink connector. 
+---
+- **tasks.max** 
+    - Specifies the maximum number of tasks that should be created for this connector. 
+    - Example: `"tasks.max": 1` means only one task will be created. 
+---
+- **connection.url** 
+    - The URL for connecting to your database. 
+    - Example: `jdbc:mysql://mysql:<port-number>/<db-name>` is a JDBC URL used for connecting to a MySQL database. 
+---
+- **connection.user** 
+    - The username for connecting to the database. 
+    - Example: `"connection.user": "postgres"` sets the username to `postgres`. 
+---    
+- **connection.password** 
+    - The password for connecting to your database. 
+    - Example: `"connection.password": "root"` sets the password to `root`. 
+---
+- **topics** 
+    - Specifies the topic from which the data should be read. 
+    - Example: `"topics": "source-connector"` sets the topic name to `source-connector` to pick the data from.
+---    
+- **insert.mode** 
+    - Specifies the insertion mode into the table. 
+    - Example: `"insert.mode": "upsert"` sets the insertion mode to `upsert`. 
+---    
+- **auto.create** 
+    - Whether to automatically create tables if they do not exist in the database. 
+    - Example: `"auto.create": "true"` will create table with the schema of the source table which is referred from the topic. 
+---    
+- **auto.evolve** 
+    - Whether to automatically evolve tables to accommodate schema changes. 
+    - Example: `"auto.evolve": "true"` allows the table schema to evolve, meaning if there is any change in the source table then those schema level changes are reflected in the destination tables as well. 
+---    
+- **batch.size** 
+    - The number of records to process in each batch. 
+    - Example: `"batch.size": 1000` sets the batch size to 1000 records. 
+---
+- **max.retries** 
+    - The maximum number of retries if a write to the database fails. 
+    - Example: `"max.retries": 10` sets the maximum retries to `10`. 
+---    
+- **retry.backoff.ms** 
+    - The time in milliseconds to wait before retrying in case of a failure. 
+    - Example: `"retry.backoff.ms": 5000` sets the backoff time to `5000 milliseconds`.
+---
+- **key.ignore** 
+    - The `key.ignore` setting determines whether the key of a record should be ignored (not included) in the Kafka topic. 
+    - By default, Kafka Connect writes both the key and the value to Kafka topics when producing data. 
+    - Setting this configuration to true ensures that only the value is written to the Kafka topic, and the key is ignored. 
+    - Example: `"key.ignore": "true"` will ignore the key. 
+---    
+- **table.name.format** 
+    - The format of the table name in the destination database.
+    - Example: `"table.name.format": "the-table-name-in-destination-mysql-db"` sets the table name format. 
+---    
+- **pk.mode** 
+    - The mode for primary keys. 
+    - Example: `"pk.mode": "record_value"` uses the record value as the primary key. 
+---
+- **pk.fields** 
+    - The fields to use for the primary key when inserting/upserting. 
+    - Example: `"pk.fields": "id"` specifies the primary key field `id` to be used when handling upserts.
+---
