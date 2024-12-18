@@ -3,19 +3,20 @@
 This folder showcases how you implement automatic table creation in the destination database, plus schema evolution when processing the data across the source and destination table.
 
 ### Key configuration Options
+ - **auto.create: true**
+    - In the sink connector configuration, this setting ensures that if the destination table does not exist in the database, the connector will automatically create it when it starts. 
+    - This eliminates the need for manual table creation and ensures seamless integration between the source and destination.
 
-    - auto.create: true
-        - In the sink connector configuration, this setting ensures that if the destination table does not exist in the database, the connector will automatically create it when it starts. 
-        - This eliminates the need for manual table creation and ensures seamless integration between the source and destination.
-
-    - auto.evolve: true
-        - This setting allows the sink connector to automatically adapt to schema changes in the source table. 
-        - If columns are added, removed, or modified in the source, these changes will be automatically reflected in the destination table. 
-        - It ensures that the destination table's schema remains in sync with the source without requiring manual intervention.
+ - **auto.evolve: true**
+    - This setting allows the sink connector to automatically adapt to schema changes from the source table. 
+    - If columns are added, removed, or modified in the source, these changes will be automatically reflected in the destination table. 
+    - It ensures that the destination table's schema remains in sync with the source without requiring manual intervention.
 
 ### Flow (Bulk Transfer):
+
 **Source Data (MySql) ---> Kafka Topic ---> Destination Data (MySql)**
-Any change of schema in the source database table will automatically gets affected in the destination database table.
+
+- Any change of schema in the source database table will automatically gets affected in the destination database table.
 
 ### Steps to follow:
 
@@ -41,13 +42,13 @@ Any change of schema in the source database table will automatically gets affect
     - While doing it on the terminal, you have to enable the mysql bash prompt in order to write sql commands.
     - Run `docker exec -it mysql bash`, this will enable mysql bash.
 
-5. Login into mysql
+5. **Login into mysql**
     - Run `mysql -u root -p` (replace root with your username you set up in the configuration.)
     - Then it will prompt you to the enter password, type password and then enter.
     - If done correctly, you can now write sql statements.
 
-6. Create table and insert values into the table.
-    - 1. Create a database if not already created and use it. (I used `kafkaa_test` as the *database name*)
+6. **Create table and insert values into the table**.
+    - 1. Create a database if not already created and *use* it. (I used `kafkaa_test` as the *database name*)
         ```sql
         CREATE DATABASE database_name;
         USE database_name;
@@ -66,9 +67,9 @@ Any change of schema in the source database table will automatically gets affect
         INSERT INTO source_table (name, age) VALUES ('Ricky', 7);
         ```
 
-7. Create a source connection file `(source_connection.json)` as a source connector file. [Refer source_connection file]()
+7. Create a source connection file `(source_connection.json)` as a **source connector** file. [Refer source_connection file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_4/source_connection.json)
 
-8. Now, post this file so that kafka will be able to pull the data from the source mysql table into the kafka topic.
+8. Now, post this file so that kafka will be able to *pull the data from the source mysql table into the kafka topic*.
     ```bash
     curl -X POST -H "Content-Type: application/json" --data @source_connection.json http://localhost:8083/connectors
     ```
@@ -77,21 +78,21 @@ Any change of schema in the source database table will automatically gets affect
 9. Check *Control Center* `(http://localhost:9021)` and visit Topics to see the data has been received in the kafka topic or not.
 
 10. (Optional Step) You can also view the topic in the *kafka container*
-    - Visit the kafka bash terminal by executing the following command in a terminal window.
+    - Visit the `kafka bash terminal` by executing the following command in a terminal window.
         ```bash
         docker exec -it <kafka-container-id> /bin/bash
         ```
-    - Replace the <kafka-container-id> with the id of kafka container, you can get that using `docker ps` command.
-    - Then, once you are in kafka bash cli, enter the following command to list all the topics:
+    - Replace the `<kafka-container-id>` with the id of kafka container, you can get that using `docker ps` command.
+    - Then, once you are in kafka bash cli, enter the following command to *list all the topics*:
         ```bash
         /usr/bin/kafka-topics --list --zookeeper zookeeper:2181
         ```
 
 11. (Optional Step) Try to put more records on the source table and see whether those new records are being reflected in the kafka topic.
 
-12. Now, Create a sink connection file `(sink_connection.json)` as a sink connector file for receiving the data from the topic to the destinstion mysql table.
+12. Now, Create a sink connection file `(sink_connection.json)` as a **sink connector file** for receiving the data from the topic to the destinstion mysql table.
 
-13. Now, post the sink json file so that kafka will be able to pull the data from the kafka topic into the destination mysql table. [Refer sink_connection file]()
+13. Now, post the sink json file so that kafka will be able to *pull the data from the kafka topic into the destination mysql table*. [Refer sink_connection file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_4/sink_connection.json)
     ```bash
     curl -X POST -H "Content-Type: application/json" --data @sink_connection.json http://localhost:8083/connectors
     ```
@@ -99,7 +100,7 @@ Any change of schema in the source database table will automatically gets affect
 
 14. Login to the mysql bash and check the data into the sink table. (At this point table will be automatically created, we manually dont have to create it.)
 
-15. Let's change the source table, add another column
+15. **Let's change the source table, add another column**.
     ```sql
     ALTER source_table
     ADD gender VARCHAR(3);
@@ -114,3 +115,5 @@ Any change of schema in the source database table will automatically gets affect
     WHERE id = 1;
     ```
     - Query the source and sink table and you would see the updated records;
+
+**NOTE**: Make sure you have [jars](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/jars) folder present in your working directory
