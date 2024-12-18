@@ -1,0 +1,88 @@
+# Source Connector Configurations
+
+- Below are some of the configurations available while creating source connection files.
+- All the configurations may not go well with each other, so based on the requirement, the configurations can be set.
+
+## Configurations
+
+- **name**
+    - Specifies the name for the connector.
+    - Example: `source_connector`
+---
+- **connector.class**
+    - The connector class that will be used for the connection.
+    - Example: `io.confluent.connect.jdbc.JdbcSourceConnector` is used as a jdbc source connector.
+---
+- **tasks.max**:
+  - Specifies the maximum number of tasks that should be created for this connector. 
+  - Example: `"tasks.max": 1` means only one task will be created.
+---
+- **connection.url**
+  - The URL for connecting to your database.
+  - Example: `jdbc:mysql://mysql:<port-number>/<your-db-name>` is a jdbc url used for connecting to a mysql database
+---
+- **connection.user**
+  - The username for connecting to the database.
+  - Example: `"connection.user": "root"` sets the username to `root`
+---
+- **connection.password**
+  - The password for connecting to your database.
+  - Example:`"connection.password": "root"` sets the password to `root`
+---
+- **mode**
+  - Specifies that the data should be ingested in which mode.
+  - Example: `"mode": "incrementing"` sets the ingestion mode to `incrementing`. 
+---
+- **incrementing.column.name**: 
+    - The name of the column that will be used to identify new records when mode is incrementing.
+    - Example: `"incrementing.column.name": "id"` will use `id` column for identifying new records.
+---
+- **plugin.name**  
+  - Specifies the logical replication plugin to use for capturing changes in the database.
+  - Example: `"plugin.name": "pgoutput"` uses the `pgoutput` plugin, which is required for logical replication in PostgreSQL.
+---
+- **database.hostname**  
+  - Defines the hostname or IP address of the database server where the source database is located.
+  - Example: `"database.hostname": "postgres"` sets the host of the PostgreSQL server to `postgres` that the connector will connect to.
+---
+- **database.port**  
+  - Specifies the port number on which the database server is listening.
+  - Example: `"database.port": "5432"` sets the port to `5432`, which is the default for PostgreSQL.
+---
+- **database.dbname**  
+  - Defines the name of the database that the connector should use.
+  - Example: `"database.dbname": "kafka_cdc"` is used for connecting to the database named `kafka_cdc`.
+---
+- **database.server.name**  
+  - This is used across connectors to define a logical server name that groups data coming from the same source. It is typically used in the context of CDC, and is applicable to PostgreSQL, MySQL, and others.
+  - Example: `"database.server.name": "mysql-server"` assigns a logical name for the mysql server to `mysql-server`
+---
+- **table.include.list**  
+  - Lists the tables from the database that should be included in the data import to the topic. This is useful for filtering which tables will be part of the change data capture.
+  - Example: `"table.include.list": "source_table1, source_table2"` configures the connector to capture changes from the specified tables (`source_table1, source_table2`).
+---
+- **table.whitelist**
+  - Specifies the table from the database that should be included in the data import to the topic.
+  - Example: `"table.whitelist" : "kafkaa_test.source_table"` sets the topic to bring the data from `kafkaa_test.source_table`
+---
+- **query**
+    - It is used to pull data from a source database by executing a custom SQL query. 
+    - Instead of specifying a list of tables to be monitored (like in the `table.whitelist` configuration), the query allows you to define a custom SQL query that can retrieve a more complex dataset.
+    - Example: `"query": "SELECT id, age FROM kafkaa_test.source_table"` will pull only `id` and `age` column from the `kafkaa_test.source_table`
+---
+- **error.tolerance**
+  - Configures the connector to tolerate the errors.
+  - Example: `"error.tolerance": "all"` configures the connector to tolerate all errors.
+---
+- **errors.log.enable**
+  - To Enable or disable logging of errors.
+  - Example: `"errors.log.enable" : "true"` Enables logging of errors.
+---
+- **topic.prefix**
+  - Specifies the prefix for the Kafka topics where the data will be published.
+  Example: `"topic.prefix": "source-table-"` ensures the topic that gets created starts with *source-table-*
+---
+- **poll.interval.ms**
+  - The frequency, in milliseconds, with which the connector should poll for new data
+  Example: `"poll.interval.ms": 1000` will poll every 1 second.
+---
