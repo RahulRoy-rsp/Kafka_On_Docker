@@ -70,25 +70,25 @@ This folder showcases how you implement `timestamp+incrementing` mode of transfe
 
 6. **Create table and insert values into the table**.
     - 1. Create a database if not already created and *use* it. (I used `kafkaa_test` as the *database name*)
-        ```sql
-        CREATE DATABASE database_name;
-        USE database_name;
-        ```
+            ```sql
+            CREATE DATABASE database_name;
+            USE database_name;
+            ```
     - 2. Create source table.
-        ```sql
-        CREATE TABLE source_table (
-            id INT NOT NULL,
-            name VARCHAR(255) NOT NULL,
-            update_ts TIMESTAMP NOT NULL,
-            PRIMARY KEY (id)
-        );
-        ```
+            ```sql
+            CREATE TABLE source_table (
+                id INT NOT NULL,
+                name VARCHAR(255) NOT NULL,
+                update_ts TIMESTAMP NOT NULL,
+                PRIMARY KEY (id)
+            );
+            ```
     - 3. Insert some values in the table.
-        ```sql
-        INSERT INTO source_table (id, name, update_ts) VALUES (1, 'Bryony Smith', '2024-12-18 10:00:00');
-        INSERT INTO source_table (id, name, update_ts) VALUES (2, 'Chris Green', '2024-12-18 10:00:00');
-        INSERT INTO source_table (id, name, update_ts) VALUES (3, 'Mark Simpson Parker', '2024-12-18 10:00:00');
-        ```
+            ```sql
+            INSERT INTO source_table (id, name, update_ts) VALUES (1, 'Bryony Smith', '2024-12-18 10:00:00');
+            INSERT INTO source_table (id, name, update_ts) VALUES (2, 'Chris Green', '2024-12-18 10:00:00');
+            INSERT INTO source_table (id, name, update_ts) VALUES (3, 'Mark Simpson Parker', '2024-12-18 10:00:00');
+            ```
 
 7. Create a source connection file `(source_connection.json)` as a **source connector** file. [Refer source_connection file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_5/source_connection.json)
 
@@ -129,7 +129,6 @@ This folder showcases how you implement `timestamp+incrementing` mode of transfe
     SET name = 'B Smith', update_ts = '2024-12-18 10:05:00'
     WHERE id = 1;
     ```
-
     ```sql
     UPDATE source_table SET name = 'Chris Green', update_ts = '2024-12-17 10:10:00' WHERE id = 2;
 
