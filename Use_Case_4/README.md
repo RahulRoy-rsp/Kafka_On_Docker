@@ -3,11 +3,11 @@
 This folder showcases how you implement automatic table creation in the destination database, plus schema evolution when processing the data across the source and destination table.
 
 ### Key configuration Options
- - **auto.create: true**
+ - **"auto.create": "true"**
     - In the sink connector configuration, this setting ensures that if the destination table does not exist in the database, the connector will automatically create it when it starts. 
     - This eliminates the need for manual table creation and ensures seamless integration between the source and destination.
 
- - **auto.evolve: true**
+ - **"auto.evolve": "true"**
     - This setting allows the sink connector to automatically adapt to schema changes from the source table. 
     - If columns are added, removed, or modified in the source, these changes will be automatically reflected in the destination table. 
     - It ensures that the destination table's schema remains in sync with the source without requiring manual intervention.
