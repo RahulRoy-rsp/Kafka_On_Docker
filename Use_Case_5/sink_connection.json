@@ -1,0 +1,21 @@
+{
+    "name": "mysql-sink-connector",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+        "tasks.max": "1",
+        "connection.url": "jdbc:mysql://mysql:3306/<database_name>",
+        "connection.user": "<user_name>",
+        "connection.password": "<user_password>",
+        "topics": "<the-source-topic-name>",
+        "insert.mode": "upsert",
+        "auto.create": "true",
+        "auto.evolve": "true",
+        "batch.size": "1000",
+        "max.retries": "10",
+        "retry.backoff.ms": "50",
+        "key.ignore": "true",
+        "table.name.format": "<the-destination-table-name>",
+        "pk.mode": "record_value",
+        "pk.fields": "id"
+    }
+}
