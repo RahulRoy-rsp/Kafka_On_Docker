@@ -20,20 +20,20 @@ And as the data is very nested, it does some level of transformations as well be
     docker-compose up -d
     ```
     - **Verify** whether the container has started running (under container tab) by opening the `Docker Desktop Application`.
-    ![use-case-6_3](use-case-6_3.png)
+    ![use-case-6_3](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/use-case-6_3.png)
     OR by using the below command:
     ```bash
     docker ps
     ```
 4. Now access the jupyter-lab environment, by opening the docker app and opening jupter-lab logs
     - you can see the server details as I saw when I started
-    ![use-case-6_4](use-case-6_4.png)
+    ![use-case-6_4](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/use-case-6_4.png)
     - visit the last link to open the lab environment which has spark setup.
-    - once opened the linked you'll see the interface as follows:![use-case-6_4_2](use-case-6_4_2.png)
+    - once opened the linked you'll see the interface as follows:![use-case-6_4_2](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/use-case-6_4_2.png)
 
 5. Creating files in `jupyter-lab` environment
     1. Create a folder of any name you like, I created `Spark-Stream-with-kafka`
-    2. Now, create a python notebook inside that folder, I named it `kafka-mysql-stream.ipynb`. [Refer this file]()
+    2. Now, create a python notebook inside that folder, I named it `kafka-mysql-stream.ipynb`. [Refer this file](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_6/kafka-mysql-stream.ipynb)
 
 6. Create kafka topic
     1. You can enter the kafka bash interface by following command:
@@ -82,7 +82,7 @@ And as the data is very nested, it does some level of transformations as well be
 9. Run the python notebook
 
 10. Now visit the kafka producer terminal and send in the data.
-    1. Paste the sample event from the [Sample-1]()
+    1. Paste the sample event from the [Sample-1](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Use_Case_6/sample_data/sample1.json)
     2. Check the jupyter-notebook to see if any batch is being updated.
     3. Also, visit mysql terminal and query the table to see if the records are inserted.
-    4. Likewise, you can input the other [Sample events]() and verify the data.
+    4. Likewise, you can input the other [Sample events](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_6/sample_data) and verify the data.
