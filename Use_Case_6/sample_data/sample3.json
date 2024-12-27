@@ -1,0 +1,16 @@
+{
+    "gameID": "01",
+    "info": {
+        "players": [
+            {
+                "ID": "1",
+                "Name": "Alice Capsey"
+            },
+            {
+                "ID": "4",
+                "Name": "Alyssa Healy"
+            }
+        ]
+    },
+    "recorded_at": "2024-12-29"
+}

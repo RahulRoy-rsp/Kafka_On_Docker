@@ -1,0 +1,16 @@
+{
+    "gameID": "02",
+    "info": {
+        "players": [
+            {
+                "ID": "3",
+                "Name": "Hayley Matthews"
+            },
+            {
+                "ID": "2",
+                "Name": "Laura Wolvaardt"
+            }
+        ]
+    },
+    "recorded_at": "2024-12-28"
+}
