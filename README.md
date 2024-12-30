@@ -63,8 +63,18 @@ You can also see the images you've pulled from your     `docker-compose` file in
 
 ---
 
+## Theoretical Concepts
+- [Basic Kafka Concepts](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts#readme)
+- [Some Source Connector Configurations](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/source.md)
+- [Some Sink Connector Configurations](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/sink.md)
+
+---
+
 ## Practical Implementation
 
 1. **[Bulk Transfer from MySql to MySql](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_1)** *(mode=bulk)*
 2. **[Incremental Transfer from MySql to MySql](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_2)** *(mode=incrementing)*
 3. **[CDC using Debezium](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_3)** *(capturing from postgres)*
+4. **[Bulk Transfer with Schema Evolution](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_4)** *(bulk mode, auto table creation and auto-schema evolution)*
+5. **[Incremental + Timestamp Transfer from MySql to MySql](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_5)** *(mode=incrementing+timestamp)*
+6. **[Spark Streaming 1](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Use_Case_6)** *(read and write stream)*
