@@ -134,38 +134,39 @@ This folder explains how you can implement a bulk transfer from a MySql database
 ### Configurations Used for Connectors:
 
 - ##### Source Connector
-| Configuration    |
------------
-|[name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#name)|
-|[connector.class](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectorclass)|
-|[tasks.max](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tasksmax)|
-|[connection.url](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionurl)
-|[connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionuser)|
-|[connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionpassword)|
-|[mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#mode)|
-|[table.whitelist](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tablewhistelist)
-|[error.tolerance](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errortolerance)|
-|[errors.log.enable](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errorslogenable)|
-|[topic.prefix](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#topicprefix)|
-|[poll.interval.ms](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#pollintervalms)
+
+| Configuration       | More Information                                                                                   | Description                     |
+|---------------------|----------------------------------------------------------------------------------------|---------------------------------|
+| name                | [name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#name)                         | Configuration name              |
+| connector.class     | [connector.class](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectorclass)     | Class of the connector          |
+| tasks.max           | [tasks.max](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tasksmax)                 | Maximum tasks                   |
+| connection.url      | [connection.url](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionurl)       | URL for connection              |
+| connection.user     | [connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionuser)     | User for connection             |
+| connection.password | [connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionpassword) | Password for connection         |
+| mode                | [mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#mode)                           | Mode of operation               |
+| table.whitelist     | [table.whitelist](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tablewhistelist)     | List of tables                  |
+| error.tolerance     | [error.tolerance](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errortolerance)     | Error tolerance level           |
+| errors.log.enable   | [errors.log.enable](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errorslogenable)   | Enable error logging            |
+| topic.prefix        | [topic.prefix](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#topicprefix)           | Prefix for topics               |
+| poll.interval.ms    | [poll.interval.ms](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#pollintervalms)    | Poll interval in milliseconds   |
 
 - ##### Sink Connector
-| Configuration    |
------------
-|[name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#name)|
-|[connector.class](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectorclass)|
-|[tasks.max](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tasksmax)|
-|[connection.url](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionurl)
-|[connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionuser)|
-|[connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionpassword)|
-|[topic](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#topic)|
-|[insert.mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#insertmode)|
-|[auto.create](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#autocreate)
-|[auto.evolve](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#autoevolve)
-|[batch.size](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#batchsize)|
-|[max.retries](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#maxretries)|
-|[retry.backoff.ms](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#retrybackoffms)|
-|[key.ignore](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#keyignore)
-|[table.name.format](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tablenameformat)
-|[pk.mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#pkmode)
-|[pk.fields](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#pkfields)
+| Configuration       | More Information                                                                                   | Description                     |
+|---------------------|----------------------------------------------------------------------------------------|---------------------------------|
+| name                | [name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#name)                         | Configuration name              |
+| connector.class     | [connector.class](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectorclass)     | Class of the connector          |
+| tasks.max           | [tasks.max](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#tasksmax)                 | Maximum tasks                   |
+| connection.url      | [connection.url](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionurl)       | URL for connection              |
+| connection.user     | [connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionuser)     | User for connection             |
+| connection.password | [connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionpassword) | Password for connection         |
+| topic               | [topic](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#topic)                         | Topic name                      |
+| insert.mode         | [insert.mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#insertmode)             | Insert mode                     |
+| auto.create         | [auto.create](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#autocreate)             | Auto create setting             |
+| auto.evolve         | [auto.evolve](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#autoevolve)             | Auto evolve setting             |
+| batch.size          | [batch.size](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#batchsize)               | Batch size                      |
+| max.retries         | [max.retries](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#maxretries)             | Maximum retries                 |
+| retry.backoff.ms    | [retry.backoff.ms](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#retrybackoffms)    | Retry backoff in milliseconds   |
+| key.ignore          | [key.ignore](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#keyignore)               | Ignore key setting              |
+| table.name.format   | [table.name.format](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#tablenameformat)   | Table name format               |
+| pk.mode             | [pk.mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#pkmode)                     | Primary key mode                |
+| pk.fields           | [pk.fields](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#pkfields)                 | Primary key fields              |
