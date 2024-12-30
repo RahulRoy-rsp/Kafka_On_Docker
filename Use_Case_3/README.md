@@ -109,3 +109,21 @@ This folder explains how you can implement a simple CDC using kafka.
 
     - For `goal_history`
     ![goal_history-2](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/goal_history-2.png)
+
+
+### Configurations Used for Connectors:
+
+- ##### Source Connector
+
+| Configuration       | More Information                                                                                   | Description                     |
+|---------------------|----------------------------------------------------------------------------------------|---------------------------------|
+| name                | [name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#name)                         | Configuration name              |
+| connector.class     | [connector.class](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectorclass)     | Class of the connector          |
+| plugin.name           | [plugin.name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#pluginname)                 |  Specifies logical replication for CDC                   |
+| database.hostname      | [database.hostname](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#databasehostname)       | Hostname/IP Address of the server              |
+| database.port     | [database.port](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#databaseport)     | Port Number of server             |
+| database.user | [database.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#databaseuser) | Password for connection         |
+| database.password                | [database.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#databasepassword)                           | Password for connection               |
+| database.dbname     | [database.dbname](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/source.md#databasedbname)     |  Source database name                  |
+| database.server.name     | [database.server.name](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#databaseservername)     | Server Name for connection           |
+| table.include.list   | [table.include.list](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tableincludelist)   | List of table names to include for CDC            |
