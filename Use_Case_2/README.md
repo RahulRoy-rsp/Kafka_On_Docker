@@ -167,7 +167,7 @@ This folder explains how you can implement a incremental load from a MySql datab
 | connection.url      | [connection.url](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionurl)       | URL for connection              |
 | connection.user     | [connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionuser)     | User for connection             |
 | connection.password | [connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#connectionpassword) | Password for connection         |
-| topic               | [topic](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#topic)                         | Topic name                      |
+| topics               | [topics](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#topics)                         | Topic name                      |
 | insert.mode         | [insert.mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#insertmode)             | Insert mode                     |
 | auto.create         | [auto.create](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#autocreate)             | Auto create setting             |
 | auto.evolve         | [auto.evolve](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/sink.md#autoevolve)             | Auto evolve setting             |
