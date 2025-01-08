@@ -5,7 +5,7 @@
 - Think of it like putting everything an app needs (like *code, libraries, and settings*) into a portable box called a **"Container"**. 
 - This box can be moved between different computers or environments, making sure the `app always works the same way no matter where it runs`. 
 - It's like making sure your app doesn't break when it moves from your computer to a friend's computer or to the cloud.
-- [How did Docker came into Existence?]()
+- [How did Docker came into Existence?](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/docker-story.md)
 
 ---
 
@@ -36,7 +36,7 @@
 ---
 
 ## Architecture
-![Docker_architecture](images/docker-arch.png)
+![Docker_architecture](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/docker-arch.png)
 
 ### Docker Client
 - The Docker Client is what you, the user, interact with. 
@@ -78,7 +78,7 @@
 ---
 
 ## Objects
-![Docker_objects](images/docker-objects.png)
+![Docker_objects](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/images/docker-objects.png)
 
 ### 1. Docker Containers
 
@@ -184,12 +184,12 @@ Imagine you’re setting up a smart home:
 
 ---
 
-[Basic Docker Commands]()
+[Basic Docker Commands](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/docker-cmds.md)
 
 ---
 
-[Docker Compose]()
+[Docker Compose](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/docker-comp.md)
 
 ---
 
-[Docker Swarm]()
+[Docker Swarm](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/docker-swarm.md)
