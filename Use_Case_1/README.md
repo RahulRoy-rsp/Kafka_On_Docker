@@ -144,7 +144,7 @@ This folder explains how you can implement a bulk transfer from a MySql database
 | connection.user     | [connection.user](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionuser)     | User for connection             |
 | connection.password | [connection.password](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#connectionpassword) | Password for connection         |
 | mode                | [mode](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#mode)                           | Mode of operation               |
-| table.whitelist     | [table.whitelist](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#tablewhistelist)     | List of tables                  |
+| table.whitelist     | [table.whitelist](https://github.com/RahulRoy-rsp/Kafka_On_Docker/blob/main/Concepts/source.md#tablewhitelist)     | List of tables                  |
 | error.tolerance     | [error.tolerance](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errortolerance)     | Error tolerance level           |
 | errors.log.enable   | [errors.log.enable](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#errorslogenable)   | Enable error logging            |
 | topic.prefix        | [topic.prefix](https://github.com/RahulRoy-rsp/Kafka_On_Docker/tree/main/Concepts/source.md#topicprefix)           | Prefix for topics               |
